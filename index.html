@@ -1,0 +1,150 @@
+<!-- 
+ Rymentz 2025 
+ Version : v1.0.0
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n-key="pageTitle">Kaspa Scarcity Simulator: Kaspa vs. Bitcoin</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Chart.js Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="language-selector">
+            <select id="lang-switcher">
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="es">Español</option>
+                <option value="zh">中文</option>
+                <option value="pt">Português</option>
+                <option value="ru">Русский</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="title-container">
+                <img src="logo.png" alt="Kaspa Logo" class="header-logo">
+                <h1 data-i18n-key="headerTitle">Kaspa Scarcity Simulator</h1>
+            </div>
+            <p data-i18n-key="headerSubtitle">Visualize Your Share of the Digital Revolution</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Simulator Card -->
+            <div class="card">
+                <h2 data-i18n-key="cardTitleSlice">Your Slice of the Pie</h2>
+                <div class="simulator">
+                    <div class="input-group">
+                        <label for="kaspa-amount" data-i18n-key="kaspaAmountLabel">Enter your Kaspa (KAS) amount</label>
+                        <input type="number" id="kaspa-amount" data-i18n-key="kaspaAmountPlaceholder" placeholder="Ex: 10000" min="0">
+                    </div>
+                    <div class="slider-container">
+                         <input type="range" id="kaspa-slider" min="0" max="1000000" step="1000" value="10000">
+                    </div>
+                    <div class="result">
+                        <p data-i18n-key="equivalentLabel">Your share would be equivalent to:</p>
+                        <div id="btc-equivalent" class="btc-value">0.007317 BTC</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Explanation Card -->
+            <div class="card">
+                <h2 data-i18n-key="cardTitleCalculation">Understanding the Calculation</h2>
+                <div class="explanation">
+                    <p data-i18n-key="calculationText1">
+                        This simulator provides a unique perspective on scarcity by comparing the max supply of Kaspa to that of Bitcoin. This is not a comparison of price or market cap, but a <strong>projection of your relative share within the total ecosystem</strong>.
+                    </p>
+                    <ul>
+                        <li><span data-i18n-key="btcMaxSupply">Bitcoin Max Supply:</span> <strong>21,000,000 BTC</strong></li>
+                        <li><span data-i18n-key="kaspaMaxSupply">Kaspa Max Supply:</span> <strong>28,700,000,000 KAS</strong></li>
+                    </ul>
+                    <p data-i18n-key="calculationText2">The calculation determines what share of Bitcoin's total supply you would own if your percentage ownership of Kaspa's total supply were transposed.</p>
+                    <p class="formula" data-i18n-key="formulaLabel">
+                        BTC Equivalent = (Your KAS / KAS Max Supply) * BTC Max Supply
+                    </p>
+                </div>
+            </div>
+
+            <!-- Kaspa Revolution Card -->
+            <div class="card">
+                <h2 data-i18n-key="cardTitleRevolution">The Kaspa Revolution</h2>
+                <div class="revolution-grid">
+                    <div class="revolution-card">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 7.28V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2.28c-.6.35-1 .98-1 1.72v6c0 .74.4 1.38 1 1.72V19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2.28c-.6-.35 1-.98 1-1.72v-6c0-.74-.4-1.38-1-1.72zM20 9v6h-2V9h2zm-4 0v6h-2V9h2zm-4 0v6H8V9h4zM5 5h14v2H5V5zm14 14H5v-2h14v2z"/></svg>
+                        <h3 data-i18n-key="revolution1Title">The BlockDAG: Beyond Blockchain</h3>
+                        <p data-i18n-key="revolution1Text">Unlike Bitcoin, which processes blocks linearly, Kaspa uses a Block Directed Acyclic Graph (blockDAG) structure. This allows it to process multiple blocks in parallel, dramatically increasing network efficiency and speed.</p>
+                    </div>
+                    <div class="revolution-card">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        <h3 data-i18n-key="revolution2Title">100% Fair Launch</h3>
+                        <p data-i18n-key="revolution2Text">Kaspa was launched in November 2021 with no pre-mining, no pre-sales, and no coin allocations to the team or investors. It is a fully decentralized, open-source, community-managed project in the true spirit of Bitcoin.</p>
+                    </div>
+                    <div class="revolution-card">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.01 21.49L23.54 12l-1.41-1.41-10.12 10.12-2.83-2.83-1.41 1.41l4.24 4.24zM12.01 2.51L1.46 12l1.42 1.41L12.01 4.9l8.13 8.13 1.41-1.42L12.01 2.51z"/></svg>
+                        <h3 data-i18n-key="revolution3Title">Extreme Speed & Scalability</h3>
+                        <p data-i18n-key="revolution3Text">Kaspa can handle very high block rates (currently 10 per second, aiming for 100). Transactions are confirmed in seconds, making it ideal for everyday payments and solving the blockchain trilemma without compromise.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emission Chart Card -->
+            <div class="card">
+                <h2 data-i18n-key="cardTitleChart">Cumulative Emission Chart</h2>
+                <div class="chart-explanation">
+                    <p data-i18n-key="chartExplanation1">
+                        The chart below illustrates the cumulative emission of Kaspa and Bitcoin...
+                    </p>
+                     <p data-i18n-key="chartExplanation2">
+                        <strong>Bitcoin</strong> has a fixed max supply of 21 million BTC...
+                    </p>
+                    <p data-i18n-key="chartExplanation3">
+                        <strong>Kaspa</strong> has a max supply of 28.7 billion KAS...
+                    </p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="emissionChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n-key="footerDev">Developed by <strong>Rymentz</strong></p>
+            <p><a href="https://kasland.org/" target="_blank" rel="noopener noreferrer" data-i18n-key="kaslandLink">Play Kasland - The first game built on Kaspa BlockDAG</a></p>
+            <div class="donation-address">
+                <span data-i18n-key="donationText">You like my project? Buy me a coffee:</span>
+                <span id="donation-addr">kaspa:qqngpnpwrfhexgu8kzk3lteu5fakh6fylmt53gt7qwtf4vttjyvfyrnr8shwa</span>
+                <button id="copy-button" class="copy-btn" data-i18n-key="copyButton">Copy</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Translation and App Logic Scripts -->
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
