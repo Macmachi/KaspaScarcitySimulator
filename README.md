@@ -2,6 +2,8 @@
 
 An interactive and educational web tool designed to help users visualize their share of the Kaspa ecosystem by comparing it to the well-established scarcity of Bitcoin. This project provides a unique perspective on proportional ownership, independent of price or market capitalization.
 
+[View the Live Demo here](https://macmachi.github.io/KaspaScarcitySimulator/)
+
 ## 🎯 Objective
 
 The primary goal of this simulator is not to predict value, but to conceptualize scarcity. By transposing the percentage of ownership of Kaspa's max supply onto Bitcoin's, users can better understand what their investment represents in terms of relative share within a decentralized digital economy.
